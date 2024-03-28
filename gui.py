@@ -66,7 +66,7 @@ class Dificuldade(tk.Frame):
 
             calc: Calcular = Calcular(dificuldade=dificuldad)
             print (calc)
-            controller.mostrar_pagina(game)
+            controller.mostrar_pagina(Game)
     
 
         self.img_menup = PhotoImage(file="imagens/fnada.png")
@@ -91,7 +91,7 @@ class Dificuldade(tk.Frame):
         self.selecionar_button = tk.Button(self, text="Selecionar", command=mostrar_selecao)
         self.selecionar_button.place(x=300, y=400,width=100,height=20)
 
-class game(tk.Frame):
+class Game(tk.Frame):
     def __init__(self, parent, controller):
         super().__init__(parent)
         print ('ola')
