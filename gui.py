@@ -2,6 +2,8 @@ import tkinter as tk
 from tkinter import PhotoImage
 from models.calcular import Calcular
 
+dificuldade_global = 0
+
 class MinhaApp(tk.Tk):
     def __init__(self):
         super().__init__()
@@ -45,27 +47,26 @@ class Dificuldade(tk.Frame):
         self.controller = controller
 
         def mostrar_selecao():
+
             # Obtém o valor selecionado
             selecionado = var.get()
 
-            dificuldad = 0
-    
+            global dificuldade_global
+
             # Dificuldade
-            if   selecionado == 1:
-                dificuldad = 1
+            if selecionado == 1:
+                dificuldade_global = 1
                 print("Dificuldade selecionada: Fácil")
             elif selecionado == 2:
-                dificuldad = 2
+                dificuldade_global = 2
                 print("Dificuldade selecionada: Médio")
             elif selecionado == 3:
-                dificuldad = 3
+                dificuldade_global = 3
                 print("Dificuldade selecionada: Difícil")
             elif selecionado == 4:
-                dificuldad = 4
+                dificuldade_global = 4
                 print("Dificuldade selecionada: NERD")
 
-            calc: Calcular = Calcular(dificuldade=dificuldad)
-            print (calc)
             controller.mostrar_pagina(Game)
     
 
@@ -94,7 +95,11 @@ class Dificuldade(tk.Frame):
 class Game(tk.Frame):
     def __init__(self, parent, controller):
         super().__init__(parent)
-        print ('ola')
+
+        self.controller = controller
+
+        calc: Calcular = Calcular(dificuldade_global)
+        print (calc)
 
 if __name__ == "__main__":
     app = MinhaApp()
