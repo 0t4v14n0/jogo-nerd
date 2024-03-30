@@ -81,6 +81,10 @@ class Calcular:
             print ('erro')
 
         return certo
+    
+    def retorna_resultado(self: object) -> int:
+        resu = self.resultado
+        return resu
 
     def mostrar_operacao(self: object) -> None:
         strr = f'{self.valor1} {self._op_simbolo} {self.valor2} = '
