@@ -72,15 +72,16 @@ class Calcular:
             return '*'
 
     def checar_resultado(self: object, resposta: int) -> bool:
-        certo: bool = False
+        certo = False
 
         if self.resultado == resposta:
-            print('Resposta correta!')
             certo = True
+            print ('deu')
         else:
-            print('Resposta errada!')
-        print(f'{self.valor1} {self._op_simbolo} {self.valor2} = {self.resultado}')
+            print ('erro')
+
         return certo
 
     def mostrar_operacao(self: object) -> None:
-        print(f'{self.valor1} {self._op_simbolo} {self.valor2} = ?')
+        strr = f'{self.valor1} {self._op_simbolo} {self.valor2} = '
+        return strr
